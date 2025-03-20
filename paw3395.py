@@ -2,7 +2,7 @@ import spidev # type: ignore
 import time
 
 class PAW3395:
-    def __init__(self, bus=0, device=0, max_speed_hz=10000000):
+    def __init__(self, bus=0, device=0, max_speed_hz=10000000): #haha soc go brrrrrrrrrrrr
         self.spi = spidev.SpiDev()
         self.bus = bus
         self.device = device
@@ -36,7 +36,7 @@ class PAW3395:
             "shutter_upper": data[10],
             "shutter_lower": data[11]
         }
-
+#cormsc wz here
     def power_up_sequence(self): #Power up initialization sequence
         self.write_register(0x3A, 0x5A) #Power_up_reset
         time.sleep(0.005) #5ms delay
